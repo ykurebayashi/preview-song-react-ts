@@ -1,21 +1,24 @@
 import { createContext, ReactNode, useState } from "react";
 
-type props = { 
-    children: ReactNode
-}
+type props = {
+  children: ReactNode;
+};
 
-type GlobalContextType = { 
-    currentName: string,
-    setCurrentName: (value: string) => void,
-}
-export const GlobalContext = createContext<GlobalContextType>({} as GlobalContextType);
+type GlobalContextType = {
+  name: string;
+  setName: (value: string) => void;
+};
 
-export const GlobalProvider = ({children}: props) => {
-    const [currentName, setCurrentName] = useState<string>('teste');
+export const GlobalContext = createContext<GlobalContextType>(
+  {} as GlobalContextType
+);
 
-    return(
-        <GlobalContext.Provider value={ {currentName, setCurrentName} }>
-            {children}
-        </GlobalContext.Provider>
-    )
-}
+export const GlobalProvider = ({ children }: props) => {
+  const [name, setName] = useState<string>("teste");
+
+  return (
+    <GlobalContext.Provider value={{ name, setName }}>
+      {children}
+    </GlobalContext.Provider>
+  );
+};
