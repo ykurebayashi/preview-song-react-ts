@@ -33,9 +33,16 @@ export const EmailInput = styled.input`
     text-align:center;
 `
 
-export const LoginButton = styled.button`
+export const LoginButton = styled.a`
     height: 5vh;
     width: 80%;
     margin: 15px auto;
     text-align:center;
+    border: 1px solid black;
+    display:flex;
+    flex-direction: column;
+    alignt-items:center;
+    justify-content: center;
+    text-decoration: none;
+    color: black;
 `

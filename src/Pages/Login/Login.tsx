@@ -1,4 +1,5 @@
 import React, { useContext } from "react";
+import { Link } from "react-router-dom";
 import { GlobalContext } from "../../Context/GlobalContext";
 import {
   LoginDiv,
@@ -20,7 +21,7 @@ export const Login = () => {
       <LoginDiv>
         <CustomH1>Connect</CustomH1>
         <EmailInput placeholder="Insert a username" onChange={handleChange} />
-        <LoginButton>Login</LoginButton>
+        <LoginButton href="/home">Login</LoginButton>
       </LoginDiv>
     </MainContainer>
   );
