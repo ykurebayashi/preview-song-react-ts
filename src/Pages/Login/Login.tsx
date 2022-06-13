@@ -1,5 +1,4 @@
 import React, { useContext } from "react";
-import { Link } from "react-router-dom";
 import { GlobalContext } from "../../Context/GlobalContext";
 import {
   LoginDiv,
@@ -10,18 +9,24 @@ import {
 } from "./style";
 
 export const Login = () => {
-  const { name, setName } = useContext(GlobalContext);
+  const { setName } = useContext(GlobalContext);
 
   const handleChange = (e: React.FormEvent<HTMLInputElement>): void => {
     setName(e.currentTarget.value);
   };
 
   return (
-    <MainContainer>
+    <MainContainer data-testId="Login-main">
       <LoginDiv>
-        <CustomH1>Connect</CustomH1>
-        <EmailInput placeholder="Insert a username" onChange={handleChange} />
-        <LoginButton href="/home">Login</LoginButton>
+        <CustomH1 data-testId="Login-header">Connect</CustomH1>
+        <EmailInput
+          placeholder="Insert a username"
+          onChange={handleChange}
+          data-testId="Login-input"
+        />
+        <LoginButton href="/home" data-testId="Login-btn">
+          Login
+        </LoginButton>
       </LoginDiv>
     </MainContainer>
   );
